@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebXShop</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function searchProducts() {
+            const query = document.querySelector('.srch').value;
+            if (query) {
+                console.log("Search query:", query);
+            } else {
+                alert("Please enter a search term.");
+            }
+        }
+
+        function showShopContent(event) {
+            event.preventDefault(); // Prevent the link from navigating
+
+            // Hide the welcome message and show the shop section
+            document.querySelector('.content').style.display = 'none';
+            document.querySelector('.navbar').style.display = 'none';  // Hide the entire navigation bar
+            document.querySelector('.shop-content').style.display = 'block';  // Show the shop section with categories
+        }
+
+        function showWomenOptions() {
+            const womenOptions = document.getElementById("women-options");
+            // Toggle the display of Women's Wear options
+            womenOptions.style.display = womenOptions.style.display === "none" ? "grid" : "none";
+        }
+
+        function showMenOptions() {
+            const menOptions = document.getElementById("men-options");
+            // Toggle the display of Men's Wear options
+            menOptions.style.display = menOptions.style.display === "none" ? "grid" : "none";
+        }
+    </script>
+</head>
+<body>
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">𝕨𝕖𝕓𝕏𝕤𝕙𝕠𝕡</h2>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">MALL</a></li>
+                    <li><a href="#">LIVE</a></li>
+                    <li><a href="#">VIDEO</a></li>
+                    <li><a href="#">SETTINGS</a></li>
+                </ul>
+            </div>  
+                
+            </a>
+            <div class="search">
+                <input class="srch" type="search" placeholder="Type to search">
+                <button class="btn" onclick="searchProducts()">Search</button>
+            </div>       
+        </div>
+
+        <div class="cart-container" onclick="addToCart()">
+            <span class="cart-icon">🛒</span>
+            <span class="cart-badge" id="cart-count">0</span>
+        </div>
+        
+        <div class="notification-bell" onclick="incrementNotifications()">
+            <span class="bell-icon">🔔</span>
+            <span class="notification-count" id="notification-count">0</span>
+        </div>
+
+        <a href="C:\Users\Luis Escamillas\New folder (3)\index.html\aming tatlo\.vscode\aming tatlo\login.html" class="profile-logo">
+            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="8" r="4" stroke="black" stroke-width="1.5" fill="white"/>
+                <path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="black" stroke-width="1.5" fill="white"/>
+            </svg>
+        </a>
+
+        <div class="content">
+            <h1>ㅤ<br>Welcome to<br><span>𝕨𝕖𝕓𝕏𝕤𝕙𝕠𝕡</span><br></h1>
+            <p class="par">Welcome to WebXShop! Discover a world of unique products tailored to meet 
+                your needs. Our <br> online store offers a diverse selection of high-quality items, 
+                from trendy fashion apparel to cutting-edge <br> electronics, all at competitive prices. We are committed to 
+                providing you with a seamless shopping <br> experience, featuring secure payment options and fast shipping. Explore 
+                our carefully curated <br> collections and find the perfect products to enhance your lifestyle. At WebXShop, customer <br>
+                satisfaction is our top priority, so feel free to reach out to our friendly support team for any inquiries. <br>
+                Start shopping today and enjoy exclusive deals and discounts!</p>
+            <button class="cn"><a href="javascript:void(0);" onclick="showShopContent(event)">SHOP NOW!</a></button>
+        </div>
+
+        <!-- Shop Content Section (Initially hidden) -->
+        <div class="shop-content" style="display: none;">
+            <h2>Shop Now!</h2>
+            <p>Browse our categories and find the best products for you.</p>
+            <div class="product-categories">
+                <label for="country">Women's Wear</label>
+                <select> 
+                    <option></option>
+                    <option>Top</option>
+                    <option>Shirt</option>
+                    <option>Jeans</option>
+                    <option>Jacket</option>
+                    <option>Short</option>
+                    <option>Dress</option>
+                </select>
+                <label for="country">Men's Wear</label>
+                <select> 
+                    <option></option>
+                    <option>Polo</option>
+                    <option>Shirt</option>
+                    <option>Hoodies</option>
+                    <option>Short</option>
+                    <option>Pants</option>
+                    <option>long Sleeve</option>
+                    <option>Trouser</option>
+                </select>
+                <label for="country">Kid's Wear</label>
+                <select> 
+                    <option></option>
+                    <option>Top</option>
+                    <option>Terno</option>
+                    <option>Short</option>
+                    <option>Pants</option>
+                    <option>Skirts</option>
+                    <option>Dress</option>
+                </select>
+                <label for="country">Underwear</label>
+                <select> 
+                    <option></option>
+                    <option>Bra</option>
+                    <option>Panty</option>
+                    <option>Brief</option>
+                    <option>Boxer</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
